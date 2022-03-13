@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "format": "prettier --write .",
-    "dev": "npm run format && astro dev",
-    "build": "npm run format && astro build",
+    "dev": "astro dev",
+    "build": "astro build",
     "preview": "astro preview"
   },
   "devDependencies": {
