@@ -6,15 +6,30 @@ import Image from '@atoms/Image.astro';
 import Card from '@organisms/Card.astro';
 import Cta from '@atoms/Cta.astro';
 
-
-const { headlineText, paragraphText, src, alt, srcIcon, altIcon, title, text, type, cta,ctaText } = Astro.props;
+const {
+  headlineText,
+  paragraphText,
+  src,
+  alt,
+  srcIcon,
+  altIcon,
+  title,
+  text,
+  type,
+  cta,
+  ctaText,
+} = Astro.props;
 ---
 
 <div class="section">
   <FlexContainer className="justify-space-between">
-    <FlexContainer className={`${type ? 'mw37' : 'mw45'} column justify-center ${type ? 'reverse' : ''}`}>
+    <FlexContainer
+      className={`${type ? 'mw37' : 'mw45'} column justify-center ${
+        type ? 'reverse' : ''
+      }`}
+    >
       <Headline type="h2" className="medium" set:html={headlineText} />
-        {Array.isArray(paragraphText) ? paragraphText.map(item => {
+          {Array.isArray(paragraphText) ? paragraphText.map(item => {
             return (
                 <Paragraph className="section" set:html={item} />
             )
@@ -30,7 +45,7 @@ const { headlineText, paragraphText, src, alt, srcIcon, altIcon, title, text, ty
       }
        {cta ? <Cta href={cta} className="medium" theme="primary">{ctaText}</Cta> : ''}
     </FlexContainer>
-    <Image {src} {alt} />
+    <Image className="hero" {src} {alt} />
   </FlexContainer>
 </div>
 
@@ -38,8 +53,8 @@ const { headlineText, paragraphText, src, alt, srcIcon, altIcon, title, text, ty
   @use '../../styles/main.scss' as *;
 
   div.section {
-    margin: 20rem 0;
     width: 100%;
+    margin: 20rem 0;
     padding: 0 2rem;
 
     @include respond(tab-port) {
@@ -58,11 +73,26 @@ const { headlineText, paragraphText, src, alt, srcIcon, altIcon, title, text, ty
       padding: 0 13.75rem;
     }
 
+    &:first-of-type {
+        margin: 7rem 0 20rem;
+    }
+
     .justify-space-between {
       flex-direction: column;
+      gap: 8rem;
 
       @include respond(tab-land) {
-  flex-direction: row;
+        flex-direction: row;
+      }
+    }
+
+    :global(img.hero) {
+      margin: 0 auto;
+      max-width: 45rem;
+      width: 80%;
+
+      @include respond(tab-land) {
+        margin: 0;
       }
     }
   }

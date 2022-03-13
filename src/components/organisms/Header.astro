@@ -22,5 +22,13 @@ import Cta from '@atoms/Cta.astro';
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    :global(.logo) {
+      margin-top: 5.2rem;
+
+      @include respond(tab-port) {
+        margin-top: 0;
+      }
+    }
   }
 </style>

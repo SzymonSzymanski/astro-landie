@@ -32,23 +32,28 @@ import Paragraph from '@atoms/Paragraph.astro';
   @use '../../styles/main.scss' as *;
 
   main {
-    min-height: 106vh;
+    min-height: 75rem;
     padding: 0 2rem;
-    background: url(/assets/designer.svg) no-repeat top right;
+    background: url(/assets/designer.svg) no-repeat top right / 67%;
 
     @include respond(tab-port) {
+      min-height: 80rem;
       padding: 0 4rem;
     }
 
     @include respond(tab-land) {
+      min-height: 80rem;
       padding: 0 7rem;
     }
 
     @include respond(desktop) {
+      min-height: 90rem;
       padding: 0 10rem;
+      background: url(/assets/designer.svg) no-repeat top right;
     }
 
     @include respond(big-desktop) {
+      min-height: 100rem;
       padding: 0 13.75rem;
     }
   }
