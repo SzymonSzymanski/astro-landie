@@ -1,0 +1,69 @@
+---
+import FlexContainer from '@atoms/FlexContainer.astro';
+import Headline from '@atoms/Headline/Headline.astro';
+import Paragraph from '@atoms/Paragraph.astro';
+import Image from '@atoms/Image.astro';
+import Card from '@organisms/Card.astro';
+import Cta from '@atoms/Cta.astro';
+
+
+const { headlineText, paragraphText, src, alt, srcIcon, altIcon, title, text, type, cta,ctaText } = Astro.props;
+---
+
+<div class="section">
+  <FlexContainer className="justify-space-between">
+    <FlexContainer className={`${type ? 'mw37' : 'mw45'} column justify-center ${type ? 'reverse' : ''}`}>
+      <Headline type="h2" className="medium" set:html={headlineText} />
+        {Array.isArray(paragraphText) ? paragraphText.map(item => {
+            return (
+                <Paragraph className="section" set:html={item} />
+            )
+        }) : <Paragraph className="section" set:html={paragraphText} />}
+      
+      {
+      srcIcon ? 
+        <FlexContainer className="justify-space-between gap2-5">
+            <Card src={srcIcon} alt={altIcon} {title} {text} />
+            <Card src={srcIcon} alt={altIcon} {title} {text} />
+        </FlexContainer> 
+      : ''
+      }
+       {cta ? <Cta href={cta} className="medium" theme="primary">{ctaText}</Cta> : ''}
+    </FlexContainer>
+    <Image {src} {alt} />
+  </FlexContainer>
+</div>
+
+<style lang="scss">
+  @use '../../styles/main.scss' as *;
+
+  div.section {
+    margin: 20rem 0;
+    width: 100%;
+    padding: 0 2rem;
+
+    @include respond(tab-port) {
+      padding: 0 4rem;
+    }
+
+    @include respond(tab-land) {
+      padding: 0 7rem;
+    }
+
+    @include respond(desktop) {
+      padding: 0 10rem;
+    }
+
+    @include respond(big-desktop) {
+      padding: 0 13.75rem;
+    }
+
+    .justify-space-between {
+      flex-direction: column;
+
+      @include respond(tab-land) {
+  flex-direction: row;
+      }
+    }
+  }
+</style>

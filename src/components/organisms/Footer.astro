@@ -1,0 +1,81 @@
+---
+import FlexContainer from '@atoms/FlexContainer.astro';
+import Cta from '@atoms/Cta.astro';
+import Link from '@atoms/Link.astro';
+import Logo from '@atoms/Logo.astro';
+import Icon from '@atoms/Icon.astro';
+
+// Assets
+import iconFacebook from '/assets/iconFacebook.svg';
+import iconLinkedin from '/assets/iconLinkedin.svg';
+import iconTwitter from '/assets/iconTwitter.svg';
+import iconYoutube from '/assets/iconYoutube.svg';
+import iconInstagram from '/assets/iconInstagram.svg';
+---
+
+<footer class="footer">
+  <FlexContainer className="justify-space-between">
+    <Link className="footerLinkMain" href="#">©2020 Yourcompany</Link>
+    <Logo />
+    <Cta className="small footerCta" theme="primary">Purchase Now</Cta>
+  </FlexContainer>
+  <hr />
+  <FlexContainer className="justify-space-between">
+    <FlexContainer className="gap5">
+      <Link className="footerLink" href="#">Home</Link>
+      <Link className="footerLink" href="#">About</Link>
+      <Link className="footerLink" href="#">Contact</Link>
+    </FlexContainer>
+    <FlexContainer className="gap2-5">
+      <Link href="#">
+        <Icon className="small" src={iconFacebook} alt="Icon Facebook" />
+      </Link>
+      <Link href="#">
+        <Icon className="small" src={iconLinkedin} alt="Icon LinkedIn" />
+      </Link>
+      <Link href="#">
+        <Icon className="small" src={iconTwitter} alt="Icon Twitter" />
+      </Link>
+      <Link href="#">
+        <Icon className="small" src={iconYoutube} alt="Icon YouTube" />
+      </Link>
+      <Link href="#">
+        <Icon className="small" src={iconInstagram} alt="Icon Instagram" />
+      </Link>
+    </FlexContainer>
+  </FlexContainer>
+</footer>
+
+<style lang="scss">
+  @use '../../styles/main.scss' as *;
+
+  .footer {
+    padding: 3.8rem 2rem 1.8rem;
+    background-color: $blue200;
+
+    @include respond(tab-port) {
+      padding: 3.8rem 4rem 1.8rem;
+    }
+
+    @include respond(tab-land) {
+      padding: 4.8rem 7rem 2.2rem;
+    }
+
+    @include respond(desktop) {
+      padding: 5.8rem 10rem 2.6rem;
+    }
+
+    @include respond(big-desktop) {
+      padding: 5.8rem 13.75rem 2.6rem;
+    }
+
+    .justify-space-between {
+      position: relative;
+    }
+
+    hr {
+      margin: 2rem 0;
+      border-color: $grey300;
+    }
+  }
+</style>

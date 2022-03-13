@@ -1,0 +1,57 @@
+---
+const { className } = Astro.props;
+---
+
+<div class={className ? className : ''}>
+  <slot />
+</div>
+
+<style lang="scss">
+  div {
+    display: flex;
+
+    &.column {
+      flex-direction: column;
+    }
+
+    &.reverse {
+      order: 1;
+    }
+
+    &.justify-center {
+      justify-content: center;
+    }
+
+    &.justify-space-between {
+      justify-content: space-between;
+    }
+
+    &.gap2-5 {
+      gap: 2.5rem;
+    }
+
+    &.gap5 {
+      gap: 5rem;
+    }
+
+    &.mw37 {
+      max-width: 37rem;
+    }
+
+    &.mw45 {
+      max-width: 45rem;
+    }
+
+    &.mw50 {
+      max-width: 50rem;
+    }
+
+    &.mt5-5 {
+      margin-top: 5.5rem;
+    }
+
+    &.mt21 {
+      margin-top: 21rem;
+    }
+  }
+</style>

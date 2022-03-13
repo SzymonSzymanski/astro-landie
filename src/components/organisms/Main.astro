@@ -1,0 +1,55 @@
+---
+import Header from '@organisms/Header.astro';
+import FlexContainer from '@atoms/FlexContainer.astro';
+import Cta from '@atoms/Cta.astro';
+import Headline from '@atoms/Headline/Headline.astro';
+import Paragraph from '@atoms/Paragraph.astro';
+---
+
+<main>
+  <Header />
+  <FlexContainer className="column mw45 mt21">
+    <Headline type="h1" className="big">
+      Introduce Your Product Quickly & Effectively
+    </Headline>
+    <Paragraph className="main">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+      ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+      dis parturient montes, nascetur ridiculus
+    </Paragraph>
+    <Paragraph className="main">
+      mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+      Nulla consequat massa quis enim.
+    </Paragraph>
+    <FlexContainer className="mt5-5 gap2-5">
+      <Cta className="big" href="#" theme="primary">Purschase UI Kit</Cta>
+      <Cta className="big" href="#" theme="secondary">Learn More</Cta>
+    </FlexContainer>
+  </FlexContainer>
+</main>
+
+<style lang="scss">
+  @use '../../styles/main.scss' as *;
+
+  main {
+    min-height: 106vh;
+    padding: 0 2rem;
+    background: url(/assets/designer.svg) no-repeat top right;
+
+    @include respond(tab-port) {
+      padding: 0 4rem;
+    }
+
+    @include respond(tab-land) {
+      padding: 0 7rem;
+    }
+
+    @include respond(desktop) {
+      padding: 0 10rem;
+    }
+
+    @include respond(big-desktop) {
+      padding: 0 13.75rem;
+    }
+  }
+</style>

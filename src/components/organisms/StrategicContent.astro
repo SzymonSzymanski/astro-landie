@@ -1,0 +1,65 @@
+---
+import FlexContainer from '@atoms/FlexContainer.astro';
+import Headline from '@atoms/Headline/Headline.astro';
+import Paragraph from '@atoms/Paragraph.astro';
+import Cta from '@atoms/Cta.astro';
+---
+
+<div class="staregicContent">
+  <FlexContainer className="column mw50">
+    <Headline type="h2" className="medium">A Price To Suit Everyone</Headline>
+    <Paragraph className="section"
+      >Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+      ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+      dis parturient montes, nascetur ridiculus
+    </Paragraph>
+    <span class="price">$40</span>
+    <span class="productName">UI Design Kit</span>
+    <span class="priceDesc">See, One price. Simple.</span>
+    <Cta className="big" theme="primary">Purchase Now</Cta>
+  </FlexContainer>
+</div>
+
+<style lang="scss">
+  @use '../../styles/main.scss' as *;
+
+  .staregicContent {
+    display: flex;
+    justify-content: center;
+    margin-top: -7rem;
+    padding: 20rem 0 14.25rem;
+    background: url(/assets/strategicContentBg.svg) no-repeat top right;
+    text-align: center;
+
+    a.big {
+      align-self: center;
+    }
+
+    .price {
+      margin: 2.5rem 0 0.5rem;
+      color: $blue700;
+      font-weight: 500;
+      font-size: 4.15rem;
+      line-height: 1.3;
+      font-family: $roboto;
+      letter-spacing: 1px;
+    }
+
+    .productName {
+      color: $blue600;
+      font-weight: 400;
+      font-size: 1.35rem;
+      line-height: 1.6;
+      font-family: $roboto;
+    }
+
+    .priceDesc {
+      margin: 5rem 0 0.9rem;
+      color: $grey600;
+      font-weight: 400;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      font-family: $roboto;
+    }
+  }
+</style>

@@ -1,0 +1,70 @@
+---
+// Style Imports
+import '@styles/global.css';
+// Component Imports
+import Main from '@organisms/Main.astro';
+import Section from '@organisms/Section.astro';
+import StrategicContent from '@organisms/StrategicContent.astro';
+import Footer from '@organisms/Footer.astro';
+
+// Assets
+import { text } from '@mocks/textContent.js';
+import mobileLogin from '/assets/mobileLogin.svg';
+import iconPlanning from '/assets/iconPlanning.svg';
+import happyNews from '/assets/happyNews.svg';
+import socialInfluencer from '/assets/socialInfluencer.svg';
+import mail from '/assets/mail.svg';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Landie</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Main />
+    <Section
+      headlineText={text.firstSection.headlineText}
+      paragraphText={text.firstSection.paragraphs}
+      src={mobileLogin}
+      alt={text.firstSection.alt}
+      srcIcon={iconPlanning}
+      altIcon={text.firstSection.altIcon}
+      title={text.firstSection.title}
+      text={text.firstSection.text}
+    />
+    <Section
+      type="secondary"
+      headlineText={text.secondSection.headlineText}
+      paragraphText={text.secondSection.paragraphs}
+      src={happyNews}
+      alt={text.secondSection.alt}
+    />
+    <Section
+      type="secondary"
+      headlineText={text.thirdSection.headlineText}
+      paragraphText={text.thirdSection.paragraphs}
+      src={socialInfluencer}
+      alt={text.thirdSection.alt}
+    />
+    <Section
+      type="secondary"
+      headlineText={text.fourthSection.headlineText}
+      paragraphText={text.fourthSection.paragraphs}
+      src={mail}
+      alt={text.fourthSection.alt}
+      cta={text.fourthSection.cta}
+      ctaText={text.fourthSection.ctaText}
+    />
+    <StrategicContent />
+    <Footer />
+  </body>
+</html>

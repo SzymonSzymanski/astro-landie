@@ -1,0 +1,28 @@
+---
+import FlexContainer from '@atoms/FlexContainer.astro';
+import Icon from '@atoms/Icon.astro';
+import Headline from '@atoms/Headline/Headline.astro';
+import Paragraph from '@atoms/Paragraph.astro';
+
+const { title, text, src, alt } = Astro.props;
+---
+
+<div class="card">
+  <FlexContainer className="column">
+    <Icon {src} {alt} />
+    <Headline className="small" type="h3">{title}</Headline>
+    <Paragraph className="cardp">{text}</Paragraph>
+  </FlexContainer>
+</div>
+
+<style lang="scss">
+  @use '../../styles/main.scss' as *;
+
+  .card {
+    margin-top: 6rem;
+  }
+
+  :global(img) {
+    margin-bottom: 1.1rem;
+  }
+</style>

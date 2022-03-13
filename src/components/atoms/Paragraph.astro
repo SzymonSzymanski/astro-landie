@@ -1,0 +1,38 @@
+---
+const { className, paragraphText } = Astro.props;
+---
+
+<p class={className ? className : ''}>
+  <slot />
+</p>
+
+<style lang="scss">
+  @use '../../styles/main.scss' as *;
+
+  p {
+    font-weight: 400;
+    font-family: $roboto;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    &.main {
+      color: $blue500;
+      font-size: 1.5rem;
+      line-height: 1.65;
+    }
+
+    &.section {
+      color: $grey600;
+      font-size: 1.35rem;
+      line-height: 1.6;
+    }
+
+    &.cardp {
+      color: $grey600;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+</style>

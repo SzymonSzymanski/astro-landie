@@ -1,0 +1,54 @@
+---
+const { className, href, theme } = Astro.props;
+---
+
+<a {href} class={className ? className : ''} data-theme={theme}>
+  <slot />
+</a>
+
+<style lang="scss">
+  @use '../../styles/main.scss' as *;
+
+  a {
+    height: auto;
+    margin: auto 0;
+    border-radius: 2px;
+    font-weight: 500;
+    font-family: $roboto;
+    text-align: center;
+    text-decoration: none;
+
+    &[data-theme='primary'] {
+      border: 2px solid $blue800;
+      background-color: $blue800;
+      color: $white100;
+    }
+
+    &[data-theme='secondary'] {
+      border: 2px solid $grey700;
+      background-color: transparent;
+      color: $grey700;
+    }
+    &.big {
+      width: 15.75rem;
+      padding: 0.5rem;
+      font-size: 1.35rem;
+    }
+
+    &.medium {
+      width: 12.5rem;
+      padding: 0.55rem 0;
+      font-size: 1.15rem;
+    }
+
+    &.small {
+      width: 13.35rem;
+      padding: 0.3rem 0;
+      font-size: 1rem;
+    }
+
+    &.footerCta {
+      width: 9.5rem;
+    }
+  }
+</style>

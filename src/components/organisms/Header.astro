@@ -1,0 +1,26 @@
+---
+import FlexContainer from '@atoms/FlexContainer.astro';
+import Link from '@atoms/Link.astro';
+import Logo from '@atoms/Logo.astro';
+import Cta from '@atoms/Cta.astro';
+---
+
+<header>
+  <FlexContainer className="gap5">
+    <Link href="#">Home</Link>
+    <Link href="#">About</Link>
+    <Link href="#">Contact</Link>
+  </FlexContainer>
+  <Logo />
+  <Cta href="#" className="small" theme="primary">Buy Now</Cta>
+</header>
+
+<style lang="scss">
+  @use '../../styles/main.scss' as *;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+</style>

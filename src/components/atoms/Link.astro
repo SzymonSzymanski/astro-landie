@@ -1,0 +1,30 @@
+---
+const { href, className } = Astro.props;
+---
+
+<a {href} class={className ? className : ''}>
+  <slot />
+</a>
+
+<style lang="scss">
+  @use '../../styles/main.scss' as *;
+
+  a {
+    padding: 1.5rem 0;
+    color: $blue800;
+    font-weight: 400;
+    font-size: 1.15rem;
+    line-height: 1.7rem;
+    font-family: $roboto;
+    text-decoration: none;
+
+    &.footerLinkMain {
+      color: $grey400;
+      font-weight: 500;
+    }
+
+    &.footerLink {
+      color: $blue300;
+    }
+  }
+</style>

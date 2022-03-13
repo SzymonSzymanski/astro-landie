@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@atoms/*": ["src/components/atoms/*"],
+      "@molecules/*": ["src/components/molecules/*"],
+      "@organisms/*": ["src/components/organisms/*"],
+      "@styles/*": ["src/styles/*"],
+      "@assets/*": ["/assets/*"],
+      "@mocks/*": ["src/mocks/*"]
+    }
+  }
+}

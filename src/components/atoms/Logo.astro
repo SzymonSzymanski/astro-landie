@@ -1,0 +1,19 @@
+---
+import Logo from '/assets/logo.svg';
+---
+
+<img src={Logo} alt="Landie" />
+
+<style lang="scss">
+  @use '../../styles/main.scss' as *;
+
+  img {
+    position: absolute;
+    top: 1.2rem;
+    left: 50%;
+    width: 6.6rem;
+    height: auto;
+    margin: auto;
+    transform: translateX(-50%);
+  }
+</style>
